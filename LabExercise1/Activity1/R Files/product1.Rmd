@@ -9,8 +9,11 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 ```{r}
-library(rvest)
+install.packages(rvest)
+```
+```{r}
 library(polite)
+library(rvest)
 ```
 ```{r}
 url <- "https://www.amazon.co.uk/s?k=shampoo&crid=1N5C7RD5GUCTZ&sprefix=shampooo%2Caps%2C345&ref=nb_sb_noss_2"
