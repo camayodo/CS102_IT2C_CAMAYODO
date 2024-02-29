@@ -1,0 +1,120 @@
+---
+title: 'Lab Exercise #3'
+author: "Ann Margaret Camayodo"
+date: "2024-02-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(rvest)
+library(polite)
+library(httr)
+
+imdb_table <- data.frame()
+
+link <- "https://www.imdb.com/title/tt15398776/reviews?ref_=tt_urv"
+session <- bow(link, user_agent = "Educational Purpose")
+
+scrapeNodes <- function(selector) {
+  scrape(session) %>%
+    html_nodes(selector) %>%
+    html_text(trim = TRUE)
+}
+
+titleMovie <- scrapeNodes("a.subnav_heading")
+reviewer <- scrapeNodes("span.display-name-link")[1:10]
+scrapedDate <- scrapeNodes("span.review-date")[1:10]
+scrapedRating <- scrapeNodes("span.rating-other-user-rating")[1:10]
+scrapedReview <- scrapeNodes("div.text.show-more__control")[1:10]
+scrapedTitleReview <- scrapeNodes("a.title")[1:10]
+
+imdb_table <- rbind(imdb_table, data.frame(
+  movie_title = rep(titleMovie, 10),
+  reviewer_name = reviewer,
+  review_date = scrapedDate,
+  review_rating = scrapedRating,
+  review_content = scrapedReview,
+  review_title = scrapedTitleReview
+))
+
+imdb_table
+
+```
+
+CREATING CONNECTIONS
+
+```{r}
+
+library(dplyr,dbplyr)
+library(RMySQL)
+
+#creating connections
+connection <- dbConnect(RMySQL::MySQL(),
+                        dsn="MariaDB-connection",
+                        Server = "localhost",
+                        dbname = "myimdb_reviews", 
+                        user = "root", 
+                        password = "password") 
+
+```
+
+LISTING TABLES AND FIELDS
+
+```{r}
+dbListTables(connection)
+dbListFields(connection,"imdb_table")
+```
+
+READING DATA FROM DATABASE
+
+```{r}
+
+review_data <- dbGetQuery(connection, "SELECT * FROM myimdb_reviews.imdb_table")
+
+glimpse(review_data)
+
+```
+
+INSERTING REVIEWS TO DATABASE
+
+```{r}
+
+for (i in 1:nrow(imdb_table)) {
+    query <- paste0("INSERT INTO imdb_table (movie_title, reviewer_name, review_date, review_rating, review_content, review_title) 
+                  VALUES ('", imdb_table$movie_title[i],"','", imdb_table$reviewer_name[i], "','", imdb_table$review_date[i],"','", imdb_table$review_rating[i], "','",
+                  gsub("'","''", imdb_table$review_content[i]), "','", gsub("'","''", imdb_table$review_title[i]), "')")
+  
+  #execute query
+  query_result <- dbSendQuery(connection, query)
+  
+  #clear result after executing query
+  dbClearResult(query_result)
+}
+
+```
+
+READ AND VIEW INSERTED DATA
+
+```{r}
+
+scrapeIMDB <- dbGetQuery(connection, "SELECT * FROM myimdb_reviews.imdb_table")
+
+scrapeIMDB[,c(2:7)]
+
+#View(scrapeIMDB[,c(2:7)])
+
+#Export to csv
+write.csv(scrapeIMDB[,c(2:7)], "scrapeIMDB.csv")
+
+```
+
+```{r}
+# Close the database connection
+dbDisconnect(connection)
+
+```
