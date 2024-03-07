@@ -1,0 +1,119 @@
+---
+title: "Practical Exam"
+author: "Ann Margaret Camayodo"
+date: "2024-03-07"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# 1.Find out, in a single command, which columns of warpbreaks are either numeric or integer. What are the data types of each column?
+column_numbers <- sapply(warpbreaks, function(x) is.numeric(x) || is.integer(x))
+print(column_numbers)
+```
+```{r}
+# 2. How many observations does it have?
+n_observations <- nrow(warpbreaks)
+print(n_observations)
+```
+```{r}
+# 3. Is numeric a natural data type for the columns which are stored as such? Convert to integer when necessary.
+warpbreaks[, column_numbers] <- sapply(warpbreaks[, column_numbers], as.integer)
+print(warpbreaks)
+```
+```{r}
+# 4. Error messages in R sometimes report the underlying type of an object rather than the user-level class. Derive from the following code and error message what the underlying type. Explain what is the error all about. Do not just copy the error message that was displayed.
+  # Derive the underlying type from an error message
+  # Explain the nature of the error
+  # Provide detailed analysis
+
+ 
+```
+
+```{r}
+# 1. Read the complete file using readLines.
+file_path <- "/cloud/project/PractExam/exampleFile .txt"
+lines <- readLines(file_path, warn = FALSE)
+print(lines)
+```
+```{r}
+# 2. Separate the vector of lines into a vector containing comments and a vector containing the data. Hint: use grepl.
+comments <- lines[grepl("^#", lines)]
+print(comments)
+data_lines <- lines[!grepl("^#", lines)]
+print(data_lines)
+```
+```{r}
+# 3. Extract the date from the first comment line and display on the screen “It was created data.”
+date_line <- comments[1]
+print(date_line)
+date <- gsub("# Date: ", "It was created data", date_line)
+print(date)
+```
+
+# 4. Read the data into a matrix as follows.
+```{r}
+# a. Split the character vectors in the vector containing data lines by semicolon (;) using strsplit.
+split_data <- strsplit(data_lines, ";")
+print(split_data)
+```
+```{r}
+# b. Find the maximum number of fields retrieved by split. Append rows that are shorter with NA's.
+max_fields <- max(sapply(split_data, length))
+print(max_fields)
+split_data <- lapply(split_data, function(x) {
+  if (length(x) < max_fields) {
+    c(x, rep(NA, max_fields - length(x)))
+  } else {
+    x
+  }
+})
+print(split_data)
+```
+```{r}
+# c. Use unlist and matrix to transform the data to row-column format.
+data_matrix <- matrix(unlist(split_data), nrow = length(split_data), byrow = TRUE)
+print(data_matrix)
+```
+```{r}
+# d.From comment lines 2-4, extract the names of the fields. Set these as colnames for the matrix you just created.
+field_names <- gsub("# ", "", comments[2:4])
+print(field_names)
+dim(data_matrix)
+
+field_names <- strsplit(field_names, ": ")[[1]]
+print(field_names)
+length_field_names <- length(field_names)
+print(length_field_names)
+
+if (ncol(data_matrix) == length_field_names) {
+  colnames(data_matrix) <- field_names
+} else {
+  # Deal with the discrepancy by changing your code appropriately.
+  print("The length of the column names and the number of columns are different.")
+}
+```
+
+
+
+
+
+
+
+
+#C. Pushing into GitHub
+
+```{r}
+#1. The .rmd should be knitted into pdf form.
+```
+```{r}
+#2. Create a folder and named it as PractExam. The PractExam will contain the .rmd and the pdf files.
+```
+```{r}
+#3. Push the folder – PractExam into your GitHub repo. There is no need to change the repo. Just use the repo you have created before.
+```
