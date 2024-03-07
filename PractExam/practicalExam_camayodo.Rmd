@@ -20,7 +20,7 @@ print(column_numbers)
 # 2. How many observations does it have?
 n_observations <- nrow(warpbreaks)
 print(n_observations)
-#
+#new
 ```
 ```{r}
 # 3. Is numeric a natural data type for the columns which are stored as such? Convert to integer when necessary.
