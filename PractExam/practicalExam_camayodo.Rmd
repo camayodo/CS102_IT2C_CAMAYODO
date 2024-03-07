@@ -15,6 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # 1.Find out, in a single command, which columns of warpbreaks are either numeric or integer. What are the data types of each column?
 column_numbers <- sapply(warpbreaks, function(x) is.numeric(x) || is.integer(x))
 print(column_numbers)
+#new 
 ```
 ```{r}
 # 2. How many observations does it have?
