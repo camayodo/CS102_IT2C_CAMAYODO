@@ -103,6 +103,52 @@ movie2 <- rbind(movie2, data.frame(
  
 }
 
-View(movie2)
+View(movie3)
+
+```
+```
+Movie 3
+```{r}
+
+library(dplyr)
+library(rvest)
+library(polite)
+library(httr)
+library(selectr)
+
+movie3 <- data.frame()
+
+for (page in 1:5) {
+  link1 <- paste0("https://www.imdb.com/title/tt12100292/reviews/?ref_=tt_ql_2", page)
+  session1 <- bow(link1, user_agent = "Educational Purpose")
+
+  scrapeNodes <- function(selector) {
+    scrape(session1) %>%
+      html_nodes(selector) %>%
+      html_text(trim = TRUE)
+  }
+
+  MovieName3 <- "Scream, Queen! My Nightmare on Elm Street"
+  scrapedTitle <- scrapeNodes("a[itemprop='url']")[1:10]
+  scrapedReviewer <- scrapeNodes(".collapsable a.title")[1:10]
+  scrapedReview <- scrapeNodes(".collapsable div.text")[1:10]
+  scrapedDate <- scrapeNodes("span.review-date")[1:10]
+  scrapedRating <- scrapeNodes(".ipl-star-icon path")[1:10]
+  scrapedType <- scrapeNodes(".sc-ab73d3b3-1 a.ipc-metadata-list-item__list-content-item")[1:10]
+
+movie3 <- rbind(movie2, data.frame(
+    movie_name = MovieName1,
+    title = scrapedTitle,
+    reviewer = scrapedReviewer,
+    review = scrapedReview,
+    date = scrapedDate,
+    ratings = scrapedRating,
+    type_of_movie= scrapedType
+  ))
+
+ 
+}
+
+View(movie3)
 
 ```
