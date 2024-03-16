@@ -101,7 +101,7 @@ while (total_papers < max_papers) {
     }
   }
 }
-
+##
 # Combine all papers from different pages into one data frame
 papers <- data.frame(title, author, subject, abstract, meta)
 
