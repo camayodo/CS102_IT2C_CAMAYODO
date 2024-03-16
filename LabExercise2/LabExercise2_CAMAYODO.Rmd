@@ -1,10 +1,10 @@
 ---
-title: "Untitled"
+title: "LabExercise2"
 author: "Ann Margaret Camayodo"
 date: "2024-03-07"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
