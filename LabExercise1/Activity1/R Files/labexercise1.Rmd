@@ -3,8 +3,8 @@ title: "Untitled"
 author: "Ann Margaret Camayodo"
 date: "2024-02-8"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -126,7 +126,7 @@ shampoo_product <- rbind(shampoo_product, data.frame(category = scrapedCategory,
 shampoo_product <- shampoo_product[1:100,]
 
 
-View(shampoo_product)
+#View(shampoo_product)
 
 ```
 
@@ -244,7 +244,7 @@ conditioner_product <- rbind(conditioner_product, data.frame(category = scrapedC
 
 conditioner_product <- conditioner_product[1:100,]
 
-View(conditioner_product)
+#View(conditioner_product)
 
 ```
 
@@ -360,7 +360,7 @@ amazonProduct1 <- rbind(amazonProduct1, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct1)
+#View(amazonProduct1)
 ```
 
 2
@@ -470,7 +470,7 @@ amazonProduct2 <- rbind(amazonProduct2, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct2)
+#View(amazonProduct2)
 ```
 
 
@@ -581,7 +581,7 @@ amazonProduct3 <- rbind(amazonProduct3, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct3)
+#View(amazonProduct3)
 ```
 
 
@@ -692,7 +692,7 @@ amazonProduct4 <- rbind(amazonProduct4, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct4)
+#View(amazonProduct4)
 ```
 
 5
@@ -802,7 +802,7 @@ amazonProduct5 <- rbind(amazonProduct5, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct5)
+#View(amazonProduct5)
 ```
 
 6
@@ -912,7 +912,7 @@ amazonProduct6 <- rbind(amazonProduct6, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct6)
+#View(amazonProduct6)
 ```
 
 7
@@ -1022,7 +1022,7 @@ amazonProduct7 <- rbind(amazonProduct7, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct7)
+#View(amazonProduct7)
 ```
 
 8
@@ -1132,7 +1132,7 @@ amazonProduct8 <- rbind(amazonProduct8, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct8)
+#View(amazonProduct8)
 ```
 
 
@@ -1243,7 +1243,7 @@ amazonProduct9 <- rbind(amazonProduct9, data.frame(category = scrapedCategory ,n
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct9)
+#View(amazonProduct9)
 ```
 
 10
@@ -1353,12 +1353,14 @@ amazonProduct10 <- rbind(amazonProduct10, data.frame(category = scrapedCategory 
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
      
-View(amazonProduct10)
+#View(amazonProduct10)
 ```
 
 ```{r}
 
 shampoo_conditioner_Amazon <- rbind(amazonProduct1, amazonProduct2, amazonProduct3, amazonProduct4, amazonProduct5, amazonProduct6, amazonProduct7, amazonProduct8, amazonProduct9, amazonProduct10)
 View(shampoo_conditioner_Amazon)
+write.csv(shampoo_conditioner_Amazon, "shampoo_conditioner.csv")
+save(scrape, file = "shampoo_conditioner_Amazon.RData")
 
 ```

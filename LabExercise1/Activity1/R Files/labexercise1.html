@@ -12,7 +12,7 @@
 <meta name="author" content="Ann Margaret Camayodo" />
 
 
-<title>Lab Exercise #1</title>
+<title>Lab Exercise 1</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -349,7 +349,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Lab Exercise #1</h1>
+<h1 class="title toc-ignore">Lab Exercise 1</h1>
 <h4 class="author">Ann Margaret Camayodo</h4>
 <h4 class="date">2024-02-8</h4>
 
@@ -396,11 +396,11 @@ scrapedName &lt;- scrapedName[2:41]
 scrapedPrice &lt;- scrapeNodes(session1, &quot;span.a-offscreen&quot;)
 scrapedPrice &lt;- scrapedPrice[2:41]
 scrapedPrice</code></pre>
-<pre><code>##  [1] &quot;£0.44&quot;  &quot;£6.00&quot;  &quot;£10.00&quot; &quot;£10.00&quot; &quot;£15.00&quot; &quot;£7.35&quot;  &quot;£0.74&quot;  &quot;£9.00&quot; 
-##  [9] &quot;£6.50&quot;  &quot;£0.65&quot;  &quot;£13.00&quot; &quot;£6.99&quot;  &quot;£1.82&quot;  &quot;£6.99&quot;  &quot;£1.82&quot;  &quot;£13.50&quot;
-## [17] &quot;£0.56&quot;  &quot;£24.00&quot; &quot;£6.99&quot;  &quot;£1.82&quot;  &quot;£5.33&quot;  &quot;£1.78&quot;  &quot;£7.99&quot;  &quot;£2.00&quot; 
-## [25] &quot;£0.50&quot;  &quot;£9.00&quot;  &quot;£0.50&quot;  &quot;£13.85&quot; &quot;£6.91&quot;  &quot;£3.99&quot;  &quot;£0.44&quot;  &quot;£6.00&quot; 
-## [33] &quot;£17.32&quot; &quot;£5.77&quot;  &quot;£21.75&quot; &quot;£17.10&quot; &quot;£0.95&quot;  &quot;£27.00&quot; &quot;£15.90&quot; &quot;£6.36&quot;</code></pre>
+<pre><code>##  [1] &quot;£0.36&quot;  &quot;£10.75&quot; &quot;£3.57&quot;  &quot;£0.40&quot;  &quot;£5.40&quot;  &quot;£3.60&quot;  &quot;£0.94&quot;  &quot;£6.29&quot; 
+##  [9] &quot;£3.60&quot;  &quot;£0.94&quot;  &quot;£6.29&quot;  &quot;£3.60&quot;  &quot;£0.94&quot;  &quot;£6.29&quot;  &quot;£13.31&quot; &quot;£0.89&quot; 
+## [17] &quot;£14.58&quot; &quot;£3.75&quot;  &quot;£1.50&quot;  &quot;£1.80&quot;  &quot;£0.45&quot;  &quot;£21.85&quot; &quot;£2.19&quot;  &quot;£28.00&quot;
+## [25] &quot;£23.33&quot; &quot;£7.78&quot;  &quot;£8.99&quot;  &quot;£0.75&quot;  &quot;£13.50&quot; &quot;£8.10&quot;  &quot;£0.45&quot;  &quot;£16.20&quot;
+## [33] &quot;£5.40&quot;  &quot;£25.15&quot; &quot;£2.52&quot;  &quot;£26.42&quot; &quot;£18.90&quot; &quot;£7.11&quot;  &quot;£22.23&quot; &quot;£19.04&quot;</code></pre>
 <pre class="r"><code>scrapedRatings &lt;- scrapeNodes(session1, &quot;span.a-icon-alt&quot;)
 scrapedRatings &lt;- scrapedRatings[2:41]
 
@@ -434,11 +434,11 @@ scrapedName &lt;- scrapedName[2:41]
 scrapedPrice &lt;- scrapeNodes(session1, &quot;span.a-offscreen&quot;)
 scrapedPrice &lt;- scrapedPrice[2:41]
 scrapedPrice</code></pre>
-<pre><code>##  [1] &quot;£1.60&quot;  &quot;£8.00&quot;  &quot;£9.99&quot;  &quot;£1.33&quot;  &quot;£24.95&quot; &quot;£26.96&quot; &quot;£3.59&quot;  &quot;£21.98&quot;
-##  [9] &quot;£8.26&quot;  &quot;£24.70&quot; &quot;£6.66&quot;  &quot;£1.36&quot;  &quot;£10.00&quot; &quot;£17.79&quot; &quot;£4.45&quot;  &quot;£10.62&quot;
-## [17] &quot;£3.54&quot;  &quot;£11.64&quot; &quot;£21.00&quot; &quot;£3.50&quot;  &quot;£25.24&quot; &quot;£2.00&quot;  &quot;£0.80&quot;  &quot;£20.18&quot;
-## [25] &quot;£7.59&quot;  &quot;£23.80&quot; &quot;£21.36&quot; &quot;£3.05&quot;  &quot;£11.97&quot; &quot;£4.79&quot;  &quot;£14.17&quot; &quot;£14.61&quot;
-## [33] &quot;£4.87&quot;  &quot;£16.50&quot; &quot;£28.00&quot; &quot;£9.33&quot;  &quot;£22.95&quot; &quot;£5.88&quot;  &quot;£12.21&quot; &quot;£4.07&quot;</code></pre>
+<pre><code>##  [1] &quot;£1.52&quot;  &quot;£10.82&quot; &quot;£6.75&quot;  &quot;£0.68&quot;  &quot;£11.70&quot; &quot;£14.67&quot; &quot;£4.89&quot;  &quot;£17.64&quot;
+##  [9] &quot;£14.00&quot; &quot;£2.80&quot;  &quot;£6.29&quot;  &quot;£1.77&quot;  &quot;£4.03&quot;  &quot;£18.00&quot; &quot;£0.72&quot;  &quot;£27.00&quot;
+## [17] &quot;£7.48&quot;  &quot;£0.75&quot;  &quot;£10.79&quot; &quot;£2.28&quot;  &quot;£13.84&quot; &quot;£1.38&quot;  &quot;£23.06&quot; &quot;£8.95&quot; 
+## [25] &quot;£1.19&quot;  &quot;£18.45&quot; &quot;£0.98&quot;  &quot;£0.39&quot;  &quot;£13.61&quot; &quot;£0.91&quot;  &quot;£26.96&quot; &quot;£3.15&quot; 
+## [33] &quot;£0.46&quot;  &quot;£6.29&quot;  &quot;£12.99&quot; &quot;£2.65&quot;  &quot;£16.65&quot; &quot;£17.18&quot; &quot;£4.30&quot;  &quot;£5.69&quot;</code></pre>
 <pre class="r"><code>scrapedRatings &lt;- scrapeNodes(session1, &quot;span.a-icon-alt&quot;)
 scrapedRatings &lt;- scrapedRatings[2:41]
 
@@ -473,11 +473,11 @@ scrapedName &lt;- scrapedName[2:41]
 scrapedPrice &lt;- scrapeNodes(session1, &quot;span.a-offscreen&quot;)
 scrapedPrice &lt;- scrapedPrice[2:41]
 scrapedPrice</code></pre>
-<pre><code>##  [1] &quot;£3.98&quot;  &quot;£14.80&quot; &quot;£23.35&quot; &quot;£9.89&quot;  &quot;£18.23&quot; &quot;£6.08&quot;  &quot;£23.13&quot; &quot;£8.10&quot; 
-##  [9] &quot;£2.29&quot;  &quot;£6.30&quot;  &quot;£2.52&quot;  &quot;£6.47&quot;  &quot;£4.80&quot;  &quot;£7.19&quot;  &quot;£9.16&quot;  &quot;£1.22&quot; 
-## [17] &quot;£18.45&quot; &quot;£17.99&quot; &quot;£0.72&quot;  &quot;£27.00&quot; &quot;£24.00&quot; &quot;£6.67&quot;  &quot;£1.80&quot;  &quot;£0.60&quot; 
-## [25] &quot;£2.25&quot;  &quot;£3.59&quot;  &quot;£1.44&quot;  &quot;£4.41&quot;  &quot;£3.60&quot;  &quot;£1.44&quot;  &quot;£7.20&quot;  &quot;£10.36&quot;
-## [33] &quot;£3.45&quot;  &quot;£13.53&quot; &quot;£17.94&quot; &quot;£0.44&quot;  &quot;£32.40&quot; &quot;£12.97&quot; &quot;£4.32&quot;  &quot;£15.21&quot;</code></pre>
+<pre><code>##  [1] &quot;£1.87&quot;  &quot;£14.91&quot; &quot;£3.73&quot;  &quot;£19.91&quot; &quot;£4.77&quot;  &quot;£1.24&quot;  &quot;£7.64&quot;  &quot;£21.52&quot;
+##  [9] &quot;£0.86&quot;  &quot;£27.00&quot; &quot;£4.96&quot;  &quot;£1.24&quot;  &quot;£5.57&quot;  &quot;£1.80&quot;  &quot;£0.60&quot;  &quot;£2.25&quot; 
+## [17] &quot;£3.21&quot;  &quot;£0.64&quot;  &quot;£8.99&quot;  &quot;£3.59&quot;  &quot;£1.24&quot;  &quot;£5.40&quot;  &quot;£9.98&quot;  &quot;£3.99&quot; 
+## [25] &quot;£12.00&quot; &quot;£4.04&quot;  &quot;£1.62&quot;  &quot;£14.81&quot; &quot;£2.96&quot;  &quot;£17.19&quot; &quot;£0.85&quot;  &quot;£24.96&quot;
+## [33] &quot;£1.66&quot;  &quot;£6.30&quot;  &quot;£2.52&quot;  &quot;£16.20&quot; &quot;£0.40&quot;  &quot;£32.40&quot; &quot;£8.52&quot;  &quot;£1.74&quot;</code></pre>
 <pre class="r"><code>scrapedRatings &lt;- scrapeNodes(session1, &quot;span.a-icon-alt&quot;)
 scrapedRatings &lt;- scrapedRatings[2:41]
 
@@ -523,11 +523,11 @@ scrapedName &lt;- scrapedName[2:41]
 scrapedPrice &lt;- scrapeNodes(session1, &quot;span.a-offscreen&quot;)
 scrapedPrice &lt;- scrapedPrice[2:41]
 scrapedPrice</code></pre>
-<pre><code>##  [1] &quot;£0.44&quot;  &quot;£6.00&quot;  &quot;£1.09&quot;  &quot;£0.44&quot;  &quot;£3.99&quot;  &quot;£2.00&quot;  &quot;£6.00&quot;  &quot;£1.49&quot; 
-##  [9] &quot;£0.75&quot;  &quot;£2.85&quot;  &quot;£6.99&quot;  &quot;£1.82&quot;  &quot;£8.49&quot;  &quot;£6.70&quot;  &quot;£1.74&quot;  &quot;£6.99&quot; 
-## [17] &quot;£6.70&quot;  &quot;£1.74&quot;  &quot;£7.49&quot;  &quot;£11.70&quot; &quot;£0.49&quot;  &quot;£12.00&quot; &quot;£3.99&quot;  &quot;£3.99&quot; 
-## [25] &quot;£5.29&quot;  &quot;£19.45&quot; &quot;£6.48&quot;  &quot;£23.00&quot; &quot;£8.99&quot;  &quot;£0.90&quot;  &quot;£18.00&quot; &quot;£29.94&quot;
-## [33] &quot;£4.99&quot;  &quot;£15.64&quot; &quot;£5.88&quot;  &quot;£27.80&quot; &quot;£35.70&quot; &quot;£3.77&quot;  &quot;£6.00&quot;  &quot;£1.50&quot;</code></pre>
+<pre><code>##  [1] &quot;£0.40&quot;  &quot;£5.40&quot;  &quot;£0.98&quot;  &quot;£0.39&quot;  &quot;£3.60&quot;  &quot;£0.94&quot;  &quot;£6.74&quot;  &quot;£4.77&quot; 
+##  [9] &quot;£1.24&quot;  &quot;£7.64&quot;  &quot;£20.39&quot; &quot;£6.80&quot;  &quot;£21.46&quot; &quot;£18.30&quot; &quot;£6.10&quot;  &quot;£18.90&quot;
+## [17] &quot;£9.82&quot;  &quot;£0.98&quot;  &quot;£16.20&quot; &quot;£0.90&quot;  &quot;£0.36&quot;  &quot;£2.25&quot;  &quot;£18.90&quot; &quot;£1.89&quot; 
+## [25] &quot;£15.39&quot; &quot;£5.79&quot;  &quot;£25.02&quot; &quot;£16.89&quot; &quot;£1.69&quot;  &quot;£0.98&quot;  &quot;£0.39&quot;  &quot;£6.92&quot; 
+## [33] &quot;£2.04&quot;  &quot;£9.00&quot;  &quot;£19.50&quot; &quot;£1.95&quot;  &quot;£23.33&quot; &quot;£9.49&quot;  &quot;£0.95&quot;  &quot;£5.39&quot;</code></pre>
 <pre class="r"><code>scrapedRatings &lt;- scrapeNodes(session1, &quot;span.a-icon-alt&quot;)
 scrapedRatings &lt;- scrapedRatings[2:41]
 
@@ -561,11 +561,11 @@ scrapedName &lt;- scrapedName[2:41]
 scrapedPrice &lt;- scrapeNodes(session1, &quot;span.a-offscreen&quot;)
 scrapedPrice &lt;- scrapedPrice[2:41]
 scrapedPrice</code></pre>
-<pre><code>##  [1] &quot;£1.40&quot;  &quot;£28.95&quot; &quot;£17.95&quot; &quot;£7.57&quot;  &quot;£20.74&quot; &quot;£8.79&quot;  &quot;£25.00&quot; &quot;£18.73&quot;
-##  [9] &quot;£1.87&quot;  &quot;£11.44&quot; &quot;£4.77&quot;  &quot;£11.99&quot; &quot;£5.40&quot;  &quot;£3.00&quot;  &quot;£15.20&quot; &quot;£7.60&quot; 
-## [17] &quot;£17.92&quot; &quot;£14.73&quot; &quot;£4.91&quot;  &quot;£18.55&quot; &quot;£7.00&quot;  &quot;£2.80&quot;  &quot;£7.19&quot;  &quot;£22.20&quot;
-## [25] &quot;£0.54&quot;  &quot;£36.00&quot; &quot;£9.00&quot;  &quot;£0.90&quot;  &quot;£18.00&quot; &quot;£6.99&quot;  &quot;£1.82&quot;  &quot;£7.49&quot; 
-## [33] &quot;£38.66&quot; &quot;£0.77&quot;  &quot;£57.00&quot; &quot;£18.85&quot; &quot;£7.54&quot;  &quot;£21.20&quot; &quot;£7.07&quot;  &quot;£25.70&quot;</code></pre>
+<pre><code>##  [1] &quot;£2.61&quot;  &quot;£6.66&quot;  &quot;£6.66&quot;  &quot;£19.95&quot; &quot;£19.95&quot; &quot;£8.33&quot;  &quot;£1.11&quot;  &quot;£26.21&quot;
+##  [9] &quot;£9.23&quot;  &quot;£1.23&quot;  &quot;£28.95&quot; &quot;£18.83&quot; &quot;£7.53&quot;  &quot;£28.00&quot; &quot;£4.05&quot;  &quot;£1.47&quot; 
+## [17] &quot;£4.50&quot;  &quot;£19.03&quot; &quot;£7.61&quot;  &quot;£14.39&quot; &quot;£7.20&quot;  &quot;£16.63&quot; &quot;£17.99&quot; &quot;£6.76&quot; 
+## [25] &quot;£25.02&quot; &quot;£4.18&quot;  &quot;£1.67&quot;  &quot;£6.29&quot;  &quot;£5.40&quot;  &quot;£2.70&quot;  &quot;£6.75&quot;  &quot;£9.95&quot; 
+## [33] &quot;£1.33&quot;  &quot;£5.27&quot;  &quot;£2.11&quot;  &quot;£5.99&quot;  &quot;£13.82&quot; &quot;£6.91&quot;  &quot;£14.97&quot; &quot;£9.32&quot;</code></pre>
 <pre class="r"><code>scrapedRatings &lt;- scrapeNodes(session1, &quot;span.a-icon-alt&quot;)
 scrapedRatings &lt;- scrapedRatings[2:41]
 
@@ -600,11 +600,11 @@ scrapedName &lt;- scrapedName[2:41]
 scrapedPrice &lt;- scrapeNodes(session1, &quot;span.a-offscreen&quot;)
 scrapedPrice &lt;- scrapedPrice[2:41]
 scrapedPrice</code></pre>
-<pre><code>##  [1] &quot;£1.31&quot;  &quot;£26.50&quot; &quot;£29.25&quot; &quot;£5.85&quot;  &quot;£7.19&quot;  &quot;£3.00&quot;  &quot;£10.79&quot; &quot;£0.89&quot; 
-##  [9] &quot;£0.25&quot;  &quot;£1.07&quot;  &quot;£5.39&quot;  &quot;£1.40&quot;  &quot;£8.09&quot;  &quot;£5.40&quot;  &quot;£5.40&quot;  &quot;£6.66&quot; 
-## [17] &quot;£1.88&quot;  &quot;£9.92&quot;  &quot;£3.97&quot;  &quot;£10.83&quot; &quot;£11.67&quot; &quot;£4.67&quot;  &quot;£5.71&quot;  &quot;£3.17&quot; 
-## [25] &quot;£7.51&quot;  &quot;£1.30&quot;  &quot;£8.99&quot;  &quot;£5.39&quot;  &quot;£1.40&quot;  &quot;£8.09&quot;  &quot;£66.66&quot; &quot;£6.67&quot; 
-## [33] &quot;£22.29&quot; &quot;£2.23&quot;  &quot;£28.00&quot; &quot;£14.98&quot; &quot;£1.66&quot;  &quot;£9.24&quot;  &quot;£1.60&quot;  &quot;£9.99&quot;</code></pre>
+<pre><code>##  [1] &quot;£1.01&quot;  &quot;£8.09&quot;  &quot;£6.59&quot;  &quot;£1.72&quot;  &quot;£9.89&quot;  &quot;£7.46&quot;  &quot;£2.98&quot;  &quot;£41.94&quot;
+##  [9] &quot;£0.84&quot;  &quot;£51.30&quot; &quot;£5.40&quot;  &quot;£1.40&quot;  &quot;£8.09&quot;  &quot;£13.04&quot; &quot;£6.52&quot;  &quot;£15.97&quot;
+## [17] &quot;£7.79&quot;  &quot;£1.81&quot;  &quot;£11.69&quot; &quot;£7.19&quot;  &quot;£2.40&quot;  &quot;£10.82&quot; &quot;£5.41&quot;  &quot;£10.83&quot;
+## [25] &quot;£3.61&quot;  &quot;£13.53&quot; &quot;£26.00&quot; &quot;£20.00&quot; &quot;£19.03&quot; &quot;£7.61&quot;  &quot;£29.95&quot; &quot;£6.33&quot; 
+## [33] &quot;£42.08&quot; &quot;£4.21&quot;  &quot;£23.81&quot; &quot;£2.38&quot;  &quot;£30.00&quot; &quot;£4.04&quot;  &quot;£1.62&quot;  &quot;£21.67&quot;</code></pre>
 <pre class="r"><code>scrapedRatings &lt;- scrapeNodes(session1, &quot;span.a-icon-alt&quot;)
 scrapedRatings &lt;- scrapedRatings[2:41]
 
@@ -1582,7 +1582,7 @@ link = &quot;https://www.amazon.co.uk/Redken-Conditioner-Argan-Intense-Softness/
          
 scrapedprodName &lt;- scrapeNodes(&quot;span.a-size-large.product-title-word-break&quot;)
 scrapedprodName</code></pre>
-<pre><code>## [1] &quot;        REDKEN All Soft Conditioner, for Dry Hair, Argan Oil, Intense Softness and Shine, 66 Percent More Inside, 500 ml       &quot;</code></pre>
+<pre><code>## [1] &quot;        REDKEN Conditioner, For Dry Hair, Argan Oil, Intense Softness and Shine, All Soft       &quot;</code></pre>
 <pre class="r"><code>scrapedReviewer &lt;- scrapeNodes(&quot;span.a-profile-name&quot;)
 scrapedReviewer &lt;- scrapedReviewer[1:10]
 
@@ -1661,10 +1661,12 @@ amazonProduct10 &lt;- rbind(amazonProduct10, data.frame(category = scrapedCatego
                           review = scrapedReview3,
                           date = scrapedDate3,
                          ratings = scrapedprodRating3))
+     
 #View(amazonProduct10)</code></pre>
 <pre class="r"><code>shampoo_conditioner_Amazon &lt;- rbind(amazonProduct1, amazonProduct2, amazonProduct3, amazonProduct4, amazonProduct5, amazonProduct6, amazonProduct7, amazonProduct8, amazonProduct9, amazonProduct10)
-
-#View(shampoo_conditioner_Amazon)</code></pre>
+#View(shampoo_conditioner_Amazon)
+write.csv(shampoo_conditioner_Amazon, &quot;shampoo_conditioner.csv&quot;)
+save(scrape, file = &quot;shampoo_conditioner_Amazon.RData&quot;)</code></pre>
 
 
 
