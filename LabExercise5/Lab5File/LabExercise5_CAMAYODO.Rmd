@@ -1,0 +1,83 @@
+---
+title: "LabExercise5"
+author: "Ann Margaret Camayodo"
+date: "2024-03-17"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# cleaning data of my Lab Exercise #4
+
+```{r, warning=FALSE}
+
+library(readr)
+library(stringr)
+library(dplyr)
+
+arxiv <- read_csv("myCSV_files/Arxiv_shoes.csv")
+
+arxiv_date_only <- str_extract(arxiv$meta, "\\d+\\s[A-Za-z]+\\s\\d+")
+
+arxiv_date_type <- as.Date(arxiv_date_only, format = "%d %b %Y")
+head(arxiv_date_type)
+
+cleaned_arxiv <- arxiv %>%
+  mutate(date = arxiv_date_type) %>%
+  mutate(subject = gsub("\\s\\(.*\\)", "", subject),
+         across(where(is.character), tolower)) %>%
+  select(-meta, -...1)
+
+
+write.csv(cleaned_arxiv, "cleanedData/Cleaned_arvixPaperSHOES.csv")
+
+
+```
+
+# cleaning data of my Lab Exercise #2
+
+```{r, warning=FALSE}
+library(readr)
+library(stringr)
+library(dplyr)
+
+
+movieReviews <- read_csv("myCSV_files/movieReviews.csv")
+
+reviews_date_type <- as.Date(str_extract(movieReviews$date, "\\d+\\s[A-Za-z]+\\s\\d+"), format = "%d %b %Y")
+
+reviews_ratings_integer <- as.integer(str_extract(movieReviews$ratings, "\\d+\\.\\d+"))
+
+# removing emoji/emoticons
+movieReviews$title <- gsub("\\p{So}", "", movieReviews$title, perl = TRUE)
+movieReviews$reviewer <- gsub("\\p{So}", "", movieReviews$reviewer, perl = TRUE)
+movieReviews$review <- gsub("\\p{So}", "", movieReviews$review, perl = TRUE)
+
+#removing non-English language
+movieReviews$title <- gsub("[^a-zA-Z ]", "", movieReviews$title)
+movieReviews$reviewer <- gsub("[^a-zA-Z ]", "", movieReviews$reviewer)
+movieReviews$review <- gsub("[^a-zA-Z ]", "", movieReviews$review)
+
+#replacing the blanks for NA 
+movieReviews$title <- na_if(movieReviews$title, "")
+movieReviews$reviewer <- na_if(movieReviews$reviewer, "")
+movieReviews$review <- na_if(movieReviews$review, "")
+
+#converting to lowercase...
+movieReviews <- movieReviews %>%
+  mutate(across(where(is.character), tolower)) %>%
+  select(-...1)
+
+# combining... 
+cleaned_reviews <- movieReviews %>%
+  mutate(date = reviews_date_type, ratings = reviews_ratings_integer)
+
+# writing as CSV
+write.csv(cleaned_reviews, "cleanedData/Cleaned_movieReviews.csv")
+
+```
